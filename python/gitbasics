@@ -1,0 +1,17 @@
+git clone -b dev https://github.com/sreeja-verkot/myRepo.git
+cd myRepo
+git branch
+git status
+git add filename
+git commit -m "msg"
+git pull
+git push
+git diff filename
+git checkout filename
+lsof -i:portnum
+kill -9 processid
+ps  (list all urrently runnig processes)
+ps |grep keyword
+sudo chmod -R 777 /dir (give full permission to a directory)
+pwd --- tells you where you currently are
+sudo lshw --gives the system specifications 
