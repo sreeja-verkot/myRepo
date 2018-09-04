@@ -1,0 +1,9 @@
+git clone -b dev https://github.com/sreeja-verkot/myRepo.git
+cd myRepo
+git branch
+git status
+git add filename
+git commit -m "msg"
+git pull
+git push
+git checkout filename
