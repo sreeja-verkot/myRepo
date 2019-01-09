@@ -2,8 +2,16 @@ print("Example 1 :\n")
 X = [[0], [1], [2], [3]]
 y = [0, 0, 1, 1]
 from sklearn.neighbors import KNeighborsRegressor
+#from sklearn.cross_validation import train_test_split
+#from sklearn.metrics import classification_report, confusion_matrix
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)  
+#neigh = KNeighborsRegressor(n_neighbors=1)
+#neigh.fit(X_train, y_train) 
+#y_pred=neigh.predict(X_test)
+#print(X_test)
+#print(confusion_matrix(y_test, y_pred))  
 neigh = KNeighborsRegressor(n_neighbors=2)
-neigh.fit(X, y) 
+neigh.fit(X,y) 
 print(neigh.predict([[1.5]]))
 
 print("\nExample 2:\n")
