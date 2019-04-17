@@ -117,17 +117,19 @@ knn.fit(X_train,y_train)
 y_pred=knn.predict(X_test)
 print('\nAccuracy Score for knn:\n')
 print(metrics.accuracy_score(y_test,y_pred))
+emoji_dict = {"joy":"😁", "fear":"😱", "anger":"😠", "sadness":"😢", "disgust":"😒", "shame":"😳", "guilt":"😳"}
+
 
 go_on=True
 while(go_on==True):
     input_msg=input("\nenter a message\n")
     input_feature=create_feature(input_msg)
-    print(svc.predict(vectorizer.transform([input_feature])))
+    prediction=svc.predict(vectorizer.transform([input_feature]))
+    #print(prediction[0])
+    print("{} {}".format(emoji_dict[prediction[0]], input_msg))
     exit=input("\nDo you want to continue?y/n\n")
     if exit == "y":
         go_on=True
     else:
         go_on=False
-def test(text):
-    input_feature=create_feature(text)
-    return svc.predict(vectorizer.transform([input_feature]))
+

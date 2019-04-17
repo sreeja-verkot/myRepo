@@ -1,9 +1,10 @@
 from tkinter import *
 from tkinter import messagebox
 import backend_gui
+import time
 
+emoji_dict = {"joy":"😁", "fear":"😱", "anger":"😠", "sadness":"😢", "disgust":"😒", "shame":"😳", "guilt":"😳"}
 firstclick = True
-
 def on_entry_click(event):
     """function that gets called whenever entry1 is clicked"""        
     global firstclick
@@ -12,12 +13,13 @@ def on_entry_click(event):
         firstclick = False
         e1.delete('1.0', END) # delete all the text in the entry
 def show_entry_fields():
+    
     if e1.get("1.0",'end-1c')=="type a sentence..." or e1.get("1.0",'end-1c')=="":
         messagebox.showerror("error", "Please enter a sentence")
         return
     else:
         mood=backend_gui.test(e1.get("1.0",'end-1c'))
-        Label(window, text =mood).grid(row=3)
+        lab=Label(window, text =mood[0]).grid(row=3)
 window = Tk()
 window.configure(background='white')
 window.title("EMOJI PREDICTOR")
